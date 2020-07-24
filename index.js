@@ -5,7 +5,7 @@ const app = express();
 
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
-const User = require('./user');
+const User = require('./public/user');
 
 
 
