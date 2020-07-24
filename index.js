@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
+//const server = http.createServer(app);
 
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
@@ -60,7 +61,15 @@ app.post('/authenticate', (req, res) =>{
     });
 });
 
-app.listen(3000, () =>{
-    console.log('server conectado');
+//app.listen(3000, () =>{
+  //  console.log('server conectado');
+//});
+
+app.set('port', process.env.PORT || 3000);
+
+app.listen(app.get('port'), () =>{
+    console.log('servidor activo');
 });
+
+
 module.exports = app;
